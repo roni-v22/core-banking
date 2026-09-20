@@ -1,5 +1,3 @@
-from tkinter import Frame
+from PresentationLaye.Main_view import MainView
 
-class Frame:
-    def __init__(self):
-        super().__init__()
+MainView()
