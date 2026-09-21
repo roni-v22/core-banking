@@ -1,11 +1,13 @@
 from tkinter import Entry, Button, Label, Checkbutton, Frame
 from PresentationLaye.component.passworkEntry import PasswordEntry
+from BusinessLayer.user_busines_logic import UserBusinesLogic
 
 
 class RegisterFrame(Frame):
-    def __init__(self,main_window,Main_view):
+    def __init__(self,main_window,Main_view,user_business:UserBusinesLogic):
         super().__init__(main_window)
 
+        user_business = user_business
         self.Main_view = Main_view
 
         self.grid_columnconfigure(1, weight=1)

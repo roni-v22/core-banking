@@ -4,11 +4,11 @@ from BusinessLayer.user_busines_logic import UserBusinesLogic
 
 
 class LoginFrame(Frame):
-    def __init__(self,main_window,Main_view):
+    def __init__(self,main_window,Main_view,user_business: UserBusinesLogic):
         super().__init__(main_window)
 
         self.Main_view = Main_view
-        self.UserBusinesLogic = UserBusinesLogic()
+        self.user_business = user_business
 
         self.columnconfigure(1, weight=1)
 
@@ -28,10 +28,10 @@ class LoginFrame(Frame):
         self.Chek_button.grid(row=2, column=1, padx=(0, 10), pady=(0, 10), sticky='w')
 
         self.Login_buttom = Button(self, text='Login', command=self.login_button_clicked)
-        self.Login_buttom.grid(row=3, column=1, padx=(0, 10), pady=(0, 10), sticky='w')
+        self.Login_buttom.grid(row=3, column=1, padx=(0, 10), pady=(0, 10), sticky='we')
 
         self.Register_buttom = Button(self, text='Register',command=self.register_button_clicked)
-        self.Register_buttom.grid(row=4, column=1, padx=(0, 10), pady=(0, 10), sticky='w')
+        self.Register_buttom.grid(row=4, column=1, padx=(0, 10), pady=(0, 10), sticky='we')
 
     def login_button_clicked(self):
         username = self.Username_entry.get()

@@ -4,14 +4,14 @@ from PresentationLaye.Frames.Register import RegisterFrame
 from tkinter import Frame
 
 class MainView:
-    def __init__(self):
+    def __init__(self,user_business):
 
         self.frames = {}
 
         self.window = Window('core bankink')
 
-        self.add_frame('Login',LoginFrame(self.window,self),400,200)
-        self.add_frame('Register',RegisterFrame(self.window,self),400,250)
+        self.add_frame('Login',LoginFrame(self.window,self,user_business),400,200)
+        self.add_frame('Register',RegisterFrame(self.window,self,user_business),400,250)
 
         self.show_frame('Login')
         self.window.show()
