@@ -4,9 +4,10 @@ from BusinessLayer.user_busines_logic import UserBusinesLogic
 
 
 class LoginFrame(Frame):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,main_window,Main_view):
+        super().__init__(main_window)
 
+        self.Main_view = Main_view
         self.UserBusinesLogic = UserBusinesLogic()
 
         self.columnconfigure(1, weight=1)
@@ -29,8 +30,8 @@ class LoginFrame(Frame):
         self.Login_buttom = Button(self, text='Login', command=self.login_button_clicked)
         self.Login_buttom.grid(row=3, column=1, padx=(0, 10), pady=(0, 10), sticky='w')
 
-        self.Regester_buttom = Button(self, text='Regester')
-        self.Regester_buttom.grid(row=4, column=1, padx=(0, 10), pady=(0, 10), sticky='w')
+        self.Register_buttom = Button(self, text='Register',command=self.register_button_clicked)
+        self.Register_buttom.grid(row=4, column=1, padx=(0, 10), pady=(0, 10), sticky='w')
 
     def login_button_clicked(self):
         username = self.Username_entry.get()
@@ -42,3 +43,6 @@ class LoginFrame(Frame):
             messagebox.showinfo(message='Login Successful')
         else:
             messagebox.showerror("Login Failed", response.message)
+
+    def register_button_clicked(self):
+        self.Main_view.show_frame('Register')

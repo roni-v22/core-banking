@@ -10,8 +10,8 @@ class MainView:
 
         self.window = Window('core bankink')
 
-        self.add_frame('Login',LoginFrame(),400,200)
-        self.add_frame('Register',RegisterFrame(),400,200)
+        self.add_frame('Login',LoginFrame(self.window,self),400,200)
+        self.add_frame('Register',RegisterFrame(self.window,self),400,250)
 
         self.show_frame('Login')
         self.window.show()
