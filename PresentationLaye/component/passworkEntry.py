@@ -20,7 +20,7 @@ class PasswordEntry(Frame):
             self.change_state_button.config(text='Hide')
             self.Password_Entry.config(show='')
         else:
-            self.change_state_button.config(text='Show')
+            self.change_state_button.config(text='show')
             self.Password_Entry.config(show='*')
 
     def get_value(self):
